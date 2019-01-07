@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
 	<id value="IPS-example-Provenance-Composition-02"/>
 	<text>
 		<status value="generated"/>
-		<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been curated by Dr Beetje Van Hulp</div>
+		<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been curated (authored and verified) by Dr Beetje Van Hulp using as source the information pre-assembled by the National IPS system</div>
 	</text>
 	<!--   
     where possible, provenance targets should be version specific,
@@ -56,23 +56,11 @@
 	<entity>
 		<role value="source"/>
 		<!--   Should this list the sources data come from ? in case how ?      -->
-		<what>
-			<display value="National ePrescription System"/>			
-		</what>
-	</entity>
-		<entity>
-		<role value="source"/>
-		<!--   Should this list the sources data come from ? in case how ?      -->
-		<what>
-			<display value="National vaccination Registry"/>			
-		</what>
-	</entity>
-		<entity>
-		<role value="source"/>
-		<!--   Should this list the sources data come from ? in case how ?      -->
 		<!-- is this right ?  -->
 		<what>
-				<display value="National IPS creator system"/>
+		<!-- is correct to have the device as source ? -->
+			<reference value="Device/IPS-examples-Device-01"/>
+			<display value="National IPS creator system"/>
 		</what>
 	</entity>
 </Provenance>
