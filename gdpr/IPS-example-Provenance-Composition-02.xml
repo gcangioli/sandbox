@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
+	<id value="IPS-example-Provenance-Composition-02"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been curated by Dr Beetje Van Hulp</div>
+	</text>
+	<!--   
+    where possible, provenance targets should be version specific,
+    so that there is no ambiguity about which version of the 
+    record this relates to
+    -->
+	<target>
+		<reference value="Composition/IPS-examples-Composition-01/_history/1"/>
+	</target>
+	<recorded value="2017-07-20T14:30:00+01:00"/>
+	<reason>
+		<!-- WHAT CODE TO USE FOR THE PS CREATION ? -->
+		<!-- TOO GENERIC ? -->
+		<!-- Purpose of USe or Purpose of Processing ? -->
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="CAREMGT"/>
+			<display value="care management"/>
+		</coding>
+	</reason>
+	<activity>
+		<text value="Authoring"/>
+		<!-- use CREATE ? -->
+	</activity>
+	<agent>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="AUT"/>
+			</coding>
+		</type>
+		<role>
+			<coding>
+				<system value=" http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+				<code value="PRIMAUTH"/>
+				<display value="Primary Author"/>
+			</coding>
+		</role>
+				<role>
+			<coding>
+				<system value=" http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
+				<code value="VERF"/>
+				<display value="Verifier"/>
+			</coding>
+		</role>
+		<who>
+			<reference value="Practitioner/IPS-examples-Practitioner-01"/>
+		</who>
+	</agent>
+	<entity>
+		<role value="source"/>
+		<!--   Should this list the sources data come from ? in case how ?      -->
+		<what>
+			<display value="National ePrescription System"/>			
+		</what>
+	</entity>
+		<entity>
+		<role value="source"/>
+		<!--   Should this list the sources data come from ? in case how ?      -->
+		<what>
+			<display value="National vaccination Registry"/>			
+		</what>
+	</entity>
+		<entity>
+		<role value="source"/>
+		<!--   Should this list the sources data come from ? in case how ?      -->
+		<!-- is this right ?  -->
+		<what>
+				<display value="National IPS creator system"/>
+		</what>
+	</entity>
+</Provenance>

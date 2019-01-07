@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
+	<id value="IPS-example-Provenance-Composition-01"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">This IPS composition has been pre-assembled by the device National IPS system using as source the National ePrescription System; National vaccination Registry and the Laboratory Information System XYZ</div>
+	</text>
+	<!--   
+    where possible, provenance targets should be version specific,
+    so that there is no ambiguity about which version of the 
+    record this relates to
+    -->
+	<target>
+		<reference value="Composition/IPS-examples-Composition-01/_history/1"/>
+	</target>
+	<recorded value="2017-07-20T14:30:00+01:00"/>
+	<reason>
+		<!-- WHAT CODE TO USE FOR THE PS CREATION ? -->
+		<!-- TOO GENERIC ? -->
+		<!-- Purpose of USe or Purpose of Processing ? -->
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="CAREMGT"/>
+			<display value="care management"/>
+		</coding>
+	</reason>
+	<activity>
+		<text value="IPS data preselection"/>
+	</activity>
+	<agent>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+				<code value="assembler"/>
+			</coding>
+			<!-- SHOULD BE DEVICE ? 
+		<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="DEV"/>
+			</coding>
+-->
+		</type>
+		<role>
+			<coding>
+				<system value=" http://dicom.nema.org/resources/ontology/DCM"/>
+				<code value="110150"/>
+				<display value="Application"/>
+			</coding>
+		</role>
+		<who>
+			<reference value="Device/IPS-examples-Device-01"/>
+			<display value="National IPS creator system"/>
+		</who>
+	</agent>
+	<entity>
+		<role value="source"/>
+		<!--   Should this list the sources data come from ? in case how ?      -->
+		<what>
+			<display value="National ePrescription System"/>			
+		</what>
+	</entity>
+		<entity>
+		<role value="source"/>
+		<!--   Should this list the sources data come from ? in case how ?      -->
+		<what>
+			<display value="National vaccination Registry"/>			
+		</what>
+	</entity>
+		<entity>
+		<role value="source"/>
+		<!--   Should this list the sources data come from ? in case how ?      -->
+		<what>
+			<display value="Laboratory Information System XYZ"/>			
+		</what>
+	</entity>
+</Provenance>

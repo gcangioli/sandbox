@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
+	<id value="IPS-example-Provenance-BldGrp-01"/>
+	<text>
+		<status value="generated"/>
+		<div xmlns="http://www.w3.org/1999/xhtml">The Blood Typing is derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</div>
+	</text>
+	<!--   
+    where possible, provenance targets should be version specific,
+    so that there is no ambiguity about which version of the 
+    record this relates to
+    -->
+	<target>
+		<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-0"/>
+	</target>
+	<recorded value="2015-10-10T09:15:00+01:00"/>
+	<reason>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="CAREMGT"/>
+			<display value="care management"/>
+		</coding>
+		<text value="IPS creation"/>
+	</reason>
+	<activity>
+		<text value="Data Extraction"/>
+		<!-- data extraction we need a code for such a kind of activity.. -->
+	</activity>
+	<agent>
+		<type>
+			<coding>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+				<code value="DEV"/>
+			</coding>
+		</type>
+		<role>
+			<coding>
+				<!-- concept missing ? -->
+				<display value="Data extractor"/>
+			</coding>
+		</role>
+		<who>
+			<display value="Nice Software"/>
+		</who>
+	</agent>
+	<entity>
+		<role value="source"/>
+		<what>
+			<identifier id="1234567"/>
+			<display value="Lab Result id #1234567"/>
+		</what>
+	</entity>
+	<entity>
+		<role value="source"/>
+		<what>
+			<display value="Lab Information System of  Nice Lab Organization"/>
+		</what>
+	</entity>
+</Provenance>
