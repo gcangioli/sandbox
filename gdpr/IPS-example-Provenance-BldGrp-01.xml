@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
+<Provenance xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../__FHIRr4Tools/fhir-all-xsd/provenance.xsd">
 	<id value="IPS-example-Provenance-BldGrp-01"/>
 	<text>
 		<status value="generated"/>
@@ -8,7 +8,8 @@
 	<!--   
     where possible, provenance targets should be version specific,
     so that there is no ambiguity about which version of the 
-    record this relates to
+   record this relates to
+
     -->
 	<target>
 		<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-0"/>
