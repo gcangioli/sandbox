@@ -7,10 +7,8 @@
 Consent to use the results of this lab report for Clinical Research Purposes.
 -->
 		<xhtml:div>
-			<xhtml:div lang="it-IT">Consenso all'alimentazione per l'attivazione del suo FSE, che consentirà il perseguimento
-delle finalità di ricerca e di governo</xhtml:div>
-			<xhtml:div lang="en">Consent to the feeding and activation of your regional EHR, which will allow the pursuit
-of research and government purposes</xhtml:div>
+			<xhtml:div lang="it-IT">Consenso all'uso dei risultati del referto di laboratorio ID 1234567, del 10-10-2015 da Nice Lab Organization per finalità di ricerca e studi clinci , porjectto XYZ</xhtml:div>
+			<xhtml:div lang="en">Consent for clinical research purposes and for project XYZ for data derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</xhtml:div>
 		</xhtml:div>
 	</text>
 	<status value="active"/>
@@ -36,12 +34,23 @@ of research and government purposes</xhtml:div>
 	</organization>
 	<policyRule>
 		<coding>
-			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<system value=""/>
 			<code value="CLINTRCH"/>
 			<display value="clinical trial research"/>
 		</coding>
 	</policyRule>
 	<provision>
+		<type value="permit"/>
+		<purpose>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="CLINTRCH"/>
+			<display value="clinical trial research"/>
+		</purpose>
+				<purpose>
+			<system value="https://www.regional-ehr.example/CodeSystem/purposeOfUse"/>
+			<code value="CLINTRCH_PRJ_XYZ"/>
+			<display value="Clinical trial research for project XYZ"/>
+		</purpose>
 		<data>
 			<meaning value="dependents"/>
 			<reference>

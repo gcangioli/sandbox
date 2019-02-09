@@ -42,7 +42,7 @@
 				<display value="Primary Author"/>
 			</coding>
 		</role>
-				<role>
+		<role>
 			<coding>
 				<system value=" http://terminology.hl7.org/CodeSystem/contractsignertypecodes"/>
 				<code value="VERF"/>
@@ -58,7 +58,7 @@
 		<!--   Should this list the sources data come from ? in case how ?      -->
 		<!-- is this right ?  -->
 		<what>
-		<!-- is correct to have the device as source ? -->
+			<!-- is correct to have the device as source ? -->
 			<reference value="Device/IPS-examples-Device-01"/>
 			<display value="National IPS creator system"/>
 		</what>

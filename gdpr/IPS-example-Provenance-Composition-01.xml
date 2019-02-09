@@ -22,9 +22,14 @@
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 			<code value="CAREMGT"/>
 			<display value="care management"/>
+
+			<!-- Clinical Summary Sharing -->
 		</coding>
 	</reason>
 	<activity>
+	
+		<!--		Assemblig data for Clinical Summary Creation -->
+
 		<text value="IPS data preselection"/>
 	</activity>
 	<agent>
@@ -33,12 +38,6 @@
 				<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
 				<code value="assembler"/>
 			</coding>
-			<!-- SHOULD BE DEVICE ? 
-		<coding>
-				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-				<code value="DEV"/>
-			</coding>
--->
 		</type>
 		<role>
 			<coding>
@@ -54,21 +53,18 @@
 	</agent>
 	<entity>
 		<role value="source"/>
-		<!--   Should this list the sources data come from ? in case how ?      -->
 		<what>
 			<display value="National ePrescription System"/>			
 		</what>
 	</entity>
 		<entity>
 		<role value="source"/>
-		<!--   Should this list the sources data come from ? in case how ?      -->
 		<what>
 			<display value="National vaccination Registry"/>			
 		</what>
 	</entity>
 		<entity>
 		<role value="source"/>
-		<!--   Should this list the sources data come from ? in case how ?      -->
 		<what>
 			<display value="Laboratory Information System XYZ"/>			
 		</what>

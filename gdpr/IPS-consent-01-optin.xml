@@ -1,28 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Consent xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir ../../../__FHIRr4Tools/fhir-all-xsd/consent.xsd">
-	<id value="consent-regionalEHRS-01"/>
+	<id value="consent-regionalEHRS-01b"/>
 	<text>
 		<status value="generated"/>
-		<!--
-(1) il consenso all'alimentazione per l'attivazione del suo FSE, che consentirà il perseguimento
-delle finalità di ricerca e di governo;
-(2) il consenso per il recupero dei Suoi dati di salute pregressi, ove disponibili, a partire dalla
-data di istituzione del FSE in Regione Toscana (01/04/2010);
-(3) il consenso alla consultazione per consentire agli operatori sanitari che La prenderanno in
-cura di accedere al Suo FSE
-Informativa
-http://www.regione.toscana.it/documents/10180/23313/documento+integrativo+e+delega.pdf/4781a2f1-c01b-4b2d-95d4-f1c53f1814a9
--->
-		<!-- 
-Three consents
-One consent for resource with three provisions ?
-One consent "three policies" ?
--->
 		<xhtml:div>
 			<xhtml:div lang="it-IT">Consenso all'alimentazione per l'attivazione del suo FSE, che consentirà il perseguimento
-delle finalità di ricerca e di governo</xhtml:div>
+delle finalità di ricerca e di governo [C1]</xhtml:div>
 			<xhtml:div lang="en">Consent to the feeding and activation of your regional EHR, which will allow the pursuit
-of research and government purposes</xhtml:div>
+of research and government purposes [C1]</xhtml:div>
+
+		<xhtml:div lang="it-IT">Consenso per il recupero dei Suoi dati di salute pregressi, ove disponibili, a partire dalla data di istituzione del FSE in Regione. [C2]</xhtml:div>
+			<xhtml:div lang="en">Consent for the recovery of your previous health data, where available, starting from the date of establishment of the EHR in the Region [C2]</xhtml:div>
+
 		</xhtml:div>
 	</text>
 	<status value="active"/>
@@ -47,22 +36,27 @@ of research and government purposes</xhtml:div>
 		<identifier id="2.16.840.1.113883.2.9.2.90"/>
 		<display value="Very Nice Region"/>
 	</organization>
+	<policy>
+		<!-- consent for the creation of the regional EHR -->
+		<uri value="https://www.regional-ehr.example/consentPolicy/C1"/>
+	</policy>
+	<policy>
+		<!-- consent for recovering the history -->
+		<uri value="https://www.regional-ehr.example/consentPolicy/C2"/>
+	</policy>
 	<policyRule>
 		<coding>
-			<system value="http://terminology.hl7.org/CodeSystem/consentpolicycodes"/>
-			<code value="it-fse-activation"/>
-			<display value="Consenso all'alimentazione per l'attivazione del suo FSE, che consentirà il perseguimento
-delle finalità di ricerca e di governo">
-				<extension url="http://hl7.org/fhir/StructureDefinition/translation">
-					<extension url="lang">
-						<valueCode value="en"/>
-					</extension>
-					<extension url="content">
-						<valueString value="Consent to the feeding and activation of your regional EHR, which will allow the pursuit
-of research and government purposes"/>
-					</extension>
-				</extension>
-			</display>
+			<system value="https://www.regional-ehr.example/CodeSystem/consentpolicycodes"/>
+			<code value="it-fse"/>
+			<display value="IT FSE Opt-in consent"/>
 		</coding>
 	</policyRule>
+	<provision>
+		<type value="permit"/>
+		<purpose>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="CAREMGT"/>
+			<display value="care management"/>
+		</purpose>
+	</provision>
 </Consent>

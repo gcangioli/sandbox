@@ -1,4 +1,4 @@
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../__FHIRr4Tools/fhir-all-xsd/bundle.xsd">
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<id value="IPS-examples-Bundle-01"/>
 	<meta>
 		<lastUpdated value="2017-07-20T14:30:00+01:00"/>
@@ -9,13 +9,14 @@
 		<value value="175bd032-8b00-4728-b2dc-748bb1501aed"/>
 	</identifier>
 	<type value="document"/>
+	<!--e1-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Composition/IPS-examples-Composition-01"/>
 		<resource>
 			<Composition>
 				<id value="IPS-examples-Composition-01"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/composition-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Composition-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:2.16.724.4.8.10.200.10"/>
@@ -26,15 +27,15 @@
 					<coding>
 						<system value="http://loinc.org"/>
 						<code value="60591-5"/>
-						<display value="Patient Summary"/>
+						<display value="Patient summary Document"/>
 					</coding>
 				</type>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<date value="2017-07-20T14:30:00+01:00"/>
 				<author>
-					<reference value="http://hapi.fhir.org/baseR4/Practitioner/IPS-examples-Practitioner-01"/>
+					<reference value="Practitioner/IPS-examples-Practitioner-01"/>
 				</author>
 				<title value="Patient Summary as of July 20, 2017 14:30"/>
 				<confidentiality value="N"/>
@@ -42,18 +43,18 @@
 					<mode value="legal"/>
 					<time value="2017-07-20T14:30:00+01:00"/>
 					<party>
-						<reference value="http://hapi.fhir.org/baseR4/Practitioner/IPS-examples-Practitioner-01"/>
+						<reference value="Practitioner/IPS-examples-Practitioner-01"/>
 					</party>
 				</attester>
 				<attester>
 					<mode value="legal"/>
 					<time value="2017-07-20T14:30:00+01:00"/>
 					<party>
-						<reference value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-01"/>
+						<reference value="Organization/IPS-examples-Organization-01"/>
 					</party>
 				</attester>
 				<custodian>
-					<reference value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-01"/>
+					<reference value="Organization/IPS-examples-Organization-01"/>
 				</custodian>
 				<relatesTo>
 					<code value="appends"/>
@@ -79,7 +80,7 @@
 						<coding>
 							<system value="http://loinc.org"/>
 							<code value="11450-4"/>
-							<display value="Problem list"/>
+							<display value="Problem list Reported"/>
 						</coding>
 					</code>
 					<text>
@@ -87,7 +88,7 @@
 						<xhtml:div>Hot flushes</xhtml:div>
 					</text>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Condition/IPS-examples-Condition-01"/>
+						<reference value="Condition/IPS-examples-Condition-01"/>
 					</entry>
 				</section>
 				<section>
@@ -96,7 +97,7 @@
 						<coding>
 							<system value="http://loinc.org"/>
 							<code value="10160-0"/>
-							<display value="Medication use"/>
+							<display value="History of Medication use Narrative"/>
 						</coding>
 					</code>
 					<text>
@@ -132,10 +133,10 @@
 						</xhtml:div>
 					</text>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/MedicationStatement/IPS-examples-MedicationStatement-01"/>
+						<reference value="MedicationStatement/IPS-examples-MedicationStatement-01"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/MedicationStatement/IPS-examples-MedicationStatement-02"/>
+						<reference value="MedicationStatement/IPS-examples-MedicationStatement-02"/>
 					</entry>
 				</section>
 				<section>
@@ -144,15 +145,20 @@
 						<coding>
 							<system value="http://loinc.org"/>
 							<code value="48765-2"/>
-							<display value="Allergies and/or adverse reactions"/>
+							<display value="Allergies and adverse reactions Document"/>
 						</coding>
 					</code>
 					<text>
 						<status value="generated"/>
-						<xhtml:div>Allergy to penicillin, high criticality, active</xhtml:div>
+						<xhtml:div>Allergy to penicillin, high criticality, active
+							No known food allergies
+						</xhtml:div>
 					</text>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/AllergyIntolerance/IPS-examples-AllergyIntolerance-01"/>
+						<reference value="AllergyIntolerance/IPS-examples-AllergyIntolerance-01"/>
+					</entry>
+					<entry>
+						<reference value="AllergyIntolerance/IPS-examples-AllergyIntolerance-02"/>
 					</entry>
 				</section>
 				<section>
@@ -161,7 +167,7 @@
 						<coding>
 							<system value="http://loinc.org"/>
 							<code value="11348-0"/>
-							<display value="Past illness"/>
+							<display value="Hx of Past illness"/>
 						</coding>
 					</code>
 					<text>
@@ -169,7 +175,7 @@
 						<xhtml:div>Breast cancer Stage II with no evidence of recurrence following treatment</xhtml:div>
 					</text>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Condition/IPS-examples-Condition-02"/>
+						<reference value="Condition/IPS-examples-Condition-02"/>
 					</entry>
 				</section>
 				<section>
@@ -192,7 +198,7 @@
 						<coding>
 							<system value="http://loinc.org"/>
 							<code value="30954-2"/>
-							<display value="Results"/>
+							<display value="Relevant diagnostic tests/laboratory data Narrative"/>
 						</coding>
 					</code>
 					<text>
@@ -259,37 +265,38 @@
 						</xhtml:div>
 					</text>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub0"/>
+						<reference value="Observation/IPS-examples-Observation-01-Sub0"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub1"/>
+						<reference value="Observation/IPS-examples-Observation-01-Sub1"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub2"/>
+						<reference value="Observation/IPS-examples-Observation-01-Sub2"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub3"/>
+						<reference value="Observation/IPS-examples-Observation-01-Sub3"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-0"/>
+						<reference value="Observation/IPS-examples-Observation-01-0"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-1"/>
+						<reference value="Observation/IPS-examples-Observation-01-1"/>
 					</entry>
 					<entry>
-						<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-3"/>
+						<reference value="Observation/IPS-examples-Observation-01-3"/>
 					</entry>
 				</section>
 			</Composition>
 		</resource>
 	</entry>
+	<!--e2-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
 		<resource>
 			<Patient>
 				<id value="IPS-examples-Patient-01"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/patient-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Patient-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:2.16.840.1.113883.2.4.6.3"/>
@@ -316,7 +323,7 @@
 				<contact>
 					<relationship>
 						<coding>
-							<system value="http://terminology.hl7.org/CodeSystem/RoleCode"/>
+							<system value="http://terminology.hl7.org/CodeSystem/v3-RoleCode"/>
 							<code value="MTH"/>
 						</coding>
 					</relationship>
@@ -339,6 +346,7 @@
 			</Patient>
 		</resource>
 	</entry>
+	<!--e3-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Practitioner/IPS-examples-Practitioner-01"/>
 		<resource>
@@ -373,6 +381,7 @@
 			</Practitioner>
 		</resource>
 	</entry>
+	<!--e4-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-01"/>
 		<resource>
@@ -399,13 +408,14 @@
 			</Organization>
 		</resource>
 	</entry>
+	<!--e5-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Condition/IPS-examples-Condition-01"/>
 		<resource>
 			<Condition>
 				<id value="IPS-examples-Condition-01"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/condition-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:1.2.3.999"/>
@@ -439,41 +449,41 @@
 				</severity>
 				<code>
 					<coding>
-						<extension url="http://hl7.org/fhir/StructureDefinition/translation">
-							<extension url="lang">
-								<valueCode value="nl-NL"/>
-							</extension>
-							<extension url="content">
-								<valueString value="opvliegers"/>
-							</extension>
-						</extension>
 						<system value="http://snomed.info/sct"/>
 						<code value="198436008"/>
-						<display value="Menopausal flushing (finding)"/>
+						<display value="Menopausal flushing (finding)">
+							<extension url="http://hl7.org/fhir/StructureDefinition/translation">
+								<extension url="lang">
+									<valueCode value="nl-NL"/>
+								</extension>
+								<extension url="content">
+									<valueString value="opvliegers"/>
+								</extension>
+							</extension>
+						</display>
 					</coding>
-					<!--  
-                    <coding>
-                        <system value="http://hl7.org/fhir/sid/icd-10"/>
-                        <code value="N95.1"/>
-                        <display value="Menopausal and female climacteric states"/>
-                    </coding>
-                    -->
+					<coding>
+						<system value="http://hl7.org/fhir/sid/icd-10"/>
+						<code value="N95.1"/>
+						<display value="Menopausal and female climacteric states"/>
+					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<onsetDateTime value="2015"/>
 				<recordedDate value="2016-10"/>
 			</Condition>
 		</resource>
 	</entry>
+	<!--e6-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/MedicationStatement/IPS-examples-MedicationStatement-01"/>
 		<resource>
 			<MedicationStatement>
 				<id value="IPS-examples-MedicationStatement-01"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/medicationstatement-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:1.2.3.999"/>
@@ -481,10 +491,10 @@
 				</identifier>
 				<status value="active"/>
 				<medicationReference>
-					<reference value="http://hapi.fhir.org/baseR4/Medication/IPS-examples-Medication-01"/>
+					<reference value="Medication/IPS-examples-Medication-01"/>
 				</medicationReference>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectivePeriod>
 					<start value="2015-03"/>
@@ -498,7 +508,7 @@
 					</timing>
 					<route>
 						<coding>
-							<system value="urn:oid:0.4.0.127.0.16.1.1.2.1"/>
+							<system value="http://hl7.org/fhir/uv/ips/CodeSystem/edqm-uv-ips"/>
 							<code value="20053000"/>
 							<display value="Oral use"/>
 						</coding>
@@ -522,13 +532,14 @@
 			</MedicationStatement>
 		</resource>
 	</entry>
+	<!--e7-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/MedicationStatement/IPS-examples-MedicationStatement-02"/>
 		<resource>
 			<MedicationStatement>
 				<id value="IPS-examples-MedicationStatement-02"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/medicationstatement-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/MedicationStatement-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:1.2.3.999"/>
@@ -536,10 +547,10 @@
 				</identifier>
 				<status value="active"/>
 				<medicationReference>
-					<reference value="http://hapi.fhir.org/baseR4/Medication/IPS-examples-Medication-02"/>
+					<reference value="Medication/IPS-examples-Medication-02"/>
 				</medicationReference>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectivePeriod>
 					<start value="2016-01"/>
@@ -547,7 +558,7 @@
 				<dosage>
 					<route>
 						<coding>
-							<system value="urn:oid:0.4.0.127.0.16.1.1.2.1"/>
+							<system value="http://hl7.org/fhir/uv/ips/CodeSystem/edqm-uv-ips"/>
 							<code value="20053000"/>
 							<display value="Oral use"/>
 						</coding>
@@ -556,13 +567,14 @@
 			</MedicationStatement>
 		</resource>
 	</entry>
+	<!--e8-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Medication/IPS-examples-Medication-01"/>
 		<resource>
 			<Medication>
 				<id value="IPS-examples-Medication-01"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/medication-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"/>
 				</meta>
 				<code>
 					<coding>
@@ -584,40 +596,43 @@
 			</Medication>
 		</resource>
 	</entry>
+	<!--e9-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Medication/IPS-examples-Medication-02"/>
 		<resource>
 			<Medication>
 				<id value="IPS-examples-Medication-02"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/medication-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Medication-uv-ips"/>
 				</meta>
 				<code>
 					<coding>
-						<extension url="http://hl7.org/fhir/StructureDefinition/translation">
-							<extension url="lang">
-								<valueCode value="nl-NL"/>
-							</extension>
-							<extension url="content">
-								<valueString value="Zwarte Cohosh Extract"/>
-							</extension>
-						</extension>
 						<system value="http://snomed.info/sct"/>
 						<code value="412588001"/>
-						<display value="Cimicifuga racemosa extract (substance)"/>
+						<display value="Cimicifuga racemosa extract (substance)">
+							<extension url="http://hl7.org/fhir/StructureDefinition/translation">
+								<extension url="lang">
+									<valueCode value="nl-NL"/>
+								</extension>
+								<extension url="content">
+									<valueString value="Zwarte Cohosh Extract"/>
+								</extension>
+							</extension>
+						</display>
 					</coding>
 					<text value="Black Cohosh Extract herbal supplement"/>
 				</code>
 			</Medication>
 		</resource>
 	</entry>
+	<!--e10-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/AllergyIntolerance/IPS-examples-AllergyIntolerance-01"/>
 		<resource>
 			<AllergyIntolerance>
 				<id value="IPS-examples-AllergyIntolerance-01"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/allergyintolerance-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:1.2.3.999"/>
@@ -644,27 +659,22 @@
 						<code value="373270004"/>
 						<display value="Penicillin -class of antibiotic- (substance)"/>
 					</coding>
-					<!--  
-                    <coding>
-                        <system value="urn:oid:2.16.840.1.113883.3.1937.777.13.5.999.1"/>
-                        <code value="X-NoKnownAllergy"/>
-                    </coding>
-                    -->
 				</code>
 				<patient>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</patient>
 				<onsetDateTime value="2010"/>
 			</AllergyIntolerance>
 		</resource>
 	</entry>
+	<!--e11-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Condition/IPS-examples-Condition-02"/>
 		<resource>
 			<Condition>
 				<id value="IPS-examples-Condition-02"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/condition-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Condition-uv-ips"/>
 				</meta>
 				<identifier>
 					<system value="urn:oid:1.2.3.999"/>
@@ -691,41 +701,41 @@
 				</category>
 				<severity>
 					<coding>
-						<system value="http://snomed.info/sct"/>
-						<code value="60333009"/>
-						<display value="Clinical stage II (finding)"/>
+						<system value="http://loinc.org"/>
+						<code value="LA6750-9"/>
+						<display value="Severe"/>
 					</coding>
 				</severity>
 				<code>
 					<coding>
-						<extension url="http://hl7.org/fhir/StructureDefinition/translation">
-							<extension url="lang">
-								<valueCode value="nl-NL"/>
-							</extension>
-							<extension url="content">
-								<valueString value="Borstkanker stadium II zonder aanwijzingen van recidieven na behandeling"/>
-							</extension>
-						</extension>
 						<system value="http://snomed.info/sct"/>
 						<code value="254837009"/>
-						<display value="Malignant neoplasm of breast (disorder)"/>
+						<display value="Malignant tumor of breast">
+							<extension url="http://hl7.org/fhir/StructureDefinition/translation">
+								<extension url="lang">
+									<valueCode value="nl-NL"/>
+								</extension>
+								<extension url="content">
+									<valueString value="Borstkanker stadium II zonder aanwijzingen van recidieven na behandeling"/>
+								</extension>
+							</extension>
+						</display>
 					</coding>
-					<!--  
-                    <coding>
-                        <system value="urn:oid:2.16.840.1.113883.6.43"/>
-                        <code value="8500/3"/>
-                        <display value="Infiltrating duct carcinoma, NOS"/>
-                    </coding>
-                    -->
+					<coding>
+						<system value="urn:oid:2.16.840.1.113883.6.43"/>
+						<code value="8500/3"/>
+						<display value="Infiltrating duct carcinoma, NOS"/>
+					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<onsetDateTime value="2015-01"/>
 				<abatementDateTime value="2015-03"/>
 			</Condition>
 		</resource>
 	</entry>
+	<!--e12-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-02"/>
 		<resource>
@@ -734,21 +744,22 @@
 				<active value="true"/>
 				<type>
 					<coding>
-						<system value="urn:oid:2.16.840.1.113883.4.642.3.403"/>
-						<code value="laboratory-medicine"/>
+						<system value="http://terminology.hl7.org/CodeSystem/organization-type"/>
+						<code value="other"/>
 					</coding>
 				</type>
 				<name value="Laboratoire de charme"/>
 			</Organization>
 		</resource>
 	</entry>
+	<!--e13-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub0"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-Sub0"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-member-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-member-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -765,7 +776,7 @@
 					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2015-10-10T09:15:00+01:00"/>
 				<valueCodeableConcept>
@@ -778,13 +789,14 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!--e14-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub1"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-Sub1"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-member-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-member-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -801,7 +813,7 @@
 					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2015-10-10T09:35:00+01:00"/>
 				<valueCodeableConcept>
@@ -814,13 +826,14 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!--e15-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub2"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-Sub2"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-member-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-member-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -837,7 +850,7 @@
 					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2015-10-10T09:35:00+01:00"/>
 				<valueCodeableConcept>
@@ -850,13 +863,14 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!--e16-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub3"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-Sub3"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-member-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-member-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -873,7 +887,7 @@
 					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2015-10-10T09:35:00+01:00"/>
 				<valueCodeableConcept>
@@ -886,13 +900,14 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!--e17-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-0"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-0"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -905,34 +920,35 @@
 					<text value="Blood typing"/>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2015-10-10"/>
 				<performer>
-					<reference value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-02"/>
+					<reference value="Organization/IPS-examples-Organization-02"/>
 				</performer>
 				<hasMember>
-					<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub0"/>
+					<reference value="Observation/IPS-examples-Observation-01-Sub0"/>
 				</hasMember>
 				<hasMember>
-					<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub1"/>
+					<reference value="Observation/IPS-examples-Observation-01-Sub1"/>
 				</hasMember>
 				<hasMember>
-					<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub2"/>
+					<reference value="Observation/IPS-examples-Observation-01-Sub2"/>
 				</hasMember>
 				<hasMember>
-					<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-Sub3"/>
+					<reference value="Observation/IPS-examples-Observation-01-Sub3"/>
 				</hasMember>
 			</Observation>
 		</resource>
 	</entry>
+	<!--e18-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-1"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-1"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -949,11 +965,11 @@
 					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2017-11-10T08:20:00+01:00"/>
 				<performer>
-					<reference value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-02"/>
+					<reference value="Organization/IPS-examples-Organization-02"/>
 				</performer>
 				<valueQuantity>
 					<value value="7.5"/>
@@ -967,13 +983,14 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!--e19-->
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-3"/>
 		<resource>
 			<Observation>
 				<id value="IPS-examples-Observation-01-3"/>
 				<meta>
-					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/observation-laboratory-uv-ips"/>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-laboratory-uv-ips"/>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -990,11 +1007,11 @@
 					</coding>
 				</code>
 				<subject>
-					<reference value="http://hapi.fhir.org/baseR4/Patient/IPS-examples-Patient-01"/>
+					<reference value="Patient/IPS-examples-Patient-01"/>
 				</subject>
 				<effectiveDateTime value="2017-12-10T08:20:00+01:00"/>
 				<performer>
-					<reference value="http://hapi.fhir.org/baseR4/Organization/IPS-examples-Organization-02"/>
+					<reference value="Organization/IPS-examples-Organization-02"/>
 				</performer>
 				<valueCodeableConcept>
 					<coding>
@@ -1009,6 +1026,48 @@
 			</Observation>
 		</resource>
 	</entry>
+	<!--e20-->
+	<entry>
+		<fullUrl value="http://hapi.fhir.org/baseR4/AllergyIntolerance/IPS-examples-AllergyIntolerance-02"/>
+		<resource>
+			<AllergyIntolerance>
+				<id value="IPS-examples-AllergyIntolerance-02"/>
+				<meta>
+					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/AllergyIntolerance-uv-ips"/>
+				</meta>
+				<identifier>
+					<system value="urn:oid:1.2.3.999"/>
+					<value value="3a462598-009c-484a-965c-d6b24a821424"/>
+				</identifier>
+				<clinicalStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"/>
+						<code value="active"/>
+					</coding>
+				</clinicalStatus>
+				<verificationStatus>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"/>
+						<code value="confirmed"/>
+					</coding>
+				</verificationStatus>
+				<type value="allergy"/>
+				<category value="medication"/>
+				<criticality value="high"/>
+				<code>
+					<coding>
+						<system value="http://hl7.org/fhir/uv/ips/CodeSystem/absent-unknown-uv-ips"/>
+						<code value="no-known-food-allergies"/>
+					</coding>
+				</code>
+				<patient>
+					<reference value="Patient/IPS-examples-Patient-01"/>
+				</patient>
+				<onsetDateTime value="2010"/>
+			</AllergyIntolerance>
+		</resource>
+	</entry>
+	
 	<entry>
 		<fullUrl value="http://hapi.fhir.org/baseR4/Provenance/IPS-example-Provenance-Composition-01"/>
 		<resource>
