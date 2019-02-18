@@ -8,10 +8,8 @@
 delle finalità di ricerca e di governo [C1]</xhtml:div>
 			<xhtml:div lang="en">Consent to the feeding and activation of your regional EHR, which will allow the pursuit
 of research and government purposes [C1]</xhtml:div>
-
-		<xhtml:div lang="it-IT">Consenso per il recupero dei Suoi dati di salute pregressi, ove disponibili, a partire dalla data di istituzione del FSE in Regione. [C2]</xhtml:div>
+			<xhtml:div lang="it-IT">Consenso per il recupero dei Suoi dati di salute pregressi, ove disponibili, a partire dalla data di istituzione del FSE in Regione. [C2]</xhtml:div>
 			<xhtml:div lang="en">Consent for the recovery of your previous health data, where available, starting from the date of establishment of the EHR in the Region [C2]</xhtml:div>
-
 		</xhtml:div>
 	</text>
 	<status value="active"/>

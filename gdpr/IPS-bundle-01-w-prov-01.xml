@@ -1,5 +1,5 @@
-<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-	<id value="IPS-examples-Bundle-01"/>
+<Bundle xmlns="http://hl7.org/fhir" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://hl7.org/fhir ../../../__FHIRr4Tools/fhir-all-xsd/bundle.xsd">
+	<id value="IPS-examples-Bundle-w-prov-01"/>
 	<meta>
 		<lastUpdated value="2017-07-20T14:30:00+01:00"/>
 	</meta>
@@ -592,6 +592,11 @@
 						<code value="2076667"/>
 						<display value="ANASTROZOL CF TABLET FILMOMHULD 1MG"/>
 					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<code value="L02BG03"/>
+						<display value="anastrozole"/>
+					</coding>
 				</code>
 			</Medication>
 		</resource>
@@ -619,6 +624,11 @@
 								</extension>
 							</extension>
 						</display>
+					</coding>
+					<coding>
+						<system value="http://www.whocc.no/atc"/>
+						<code value="G02CX04"/>
+						<display value="Cimicifugae rhizoma"/>
 					</coding>
 					<text value="Black Cohosh Extract herbal supplement"/>
 				</code>
@@ -1067,15 +1077,14 @@
 			</AllergyIntolerance>
 		</resource>
 	</entry>
-	
 	<entry>
-		<fullUrl value="http://hapi.fhir.org/baseR4/Provenance/IPS-example-Provenance-Composition-01"/>
+	<fullUrl value="http://hapi.fhir.org/baseR4/Provenance/IPS-example-Provenance-Composition-01"/>
 		<resource>
 			<Provenance>
 				<id value="IPS-example-Provenance-Composition-01"/>
 				<text>
 					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been pre-assembled by the device National IPS system.</div>
+					<div xmlns="http://www.w3.org/1999/xhtml">This IPS composition has been pre-assembled by the device National IPS system using as source the National ePrescription System; National vaccination Registry and the Laboratory Information System XYZ</div>
 				</text>
 				<!--   
     where possible, provenance targets should be version specific,
@@ -1087,31 +1096,34 @@
 				</target>
 				<recorded value="2017-07-20T14:30:00+01:00"/>
 				<reason>
-					<!-- WHAT CODE TO USE FOR THE PS CREATION ? -->
-					<!-- TOO GENERIC ? -->
 					<!-- Purpose of USe or Purpose of Processing ? -->
 					<coding>
 						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 						<code value="CAREMGT"/>
 						<display value="care management"/>
+						<!-- Clinical Summary Sharing -->
+					</coding>
+					<coding>
+						<system value="https:/terminology.regional-ehr.example/purposeofuse"/>
+						<code value="clin_sum"/>
+						<display value="Clinical Summary management"/>
 					</coding>
 				</reason>
 				<activity>
+					<coding>
+						<system value="https:/terminology.regional-ehr.example/purposeofprocessing"/>
+						<code value="clin_sum_ass"/>
+						<display value="Clinical Summary Assembling"/>
+					</coding>
+					<!--		Assemblig data for Clinical Summary Creation -->
 					<text value="IPS data preselection"/>
 				</activity>
-				<!--   author = Harold Hippocrates   -->
 				<agent>
 					<type>
 						<coding>
 							<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
 							<code value="assembler"/>
 						</coding>
-						<!-- SHOULD BE DEVICE ? 
-		<coding>
-				<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
-				<code value="DEV"/>
-			</coding>
--->
 					</type>
 					<role>
 						<coding>
@@ -1127,59 +1139,58 @@
 				</agent>
 				<entity>
 					<role value="source"/>
-					<!--   Should this list the sources data come from ? in case how ?      -->
 					<what>
 						<display value="National ePrescription System"/>
 					</what>
 				</entity>
 				<entity>
 					<role value="source"/>
-					<!--   Should this list the sources data come from ? in case how ?      -->
 					<what>
-						<display value="National vaccination Registry"/>
+						<display value="National Vaccination Registry"/>
 					</what>
 				</entity>
 				<entity>
 					<role value="source"/>
-					<!--   Should this list the sources data come from ? in case how ?      -->
 					<what>
-						<display value="Laboratory Information System XYZ"/>
+						<display value="Lab Information System of  Laboratoire de charme"/>
 					</what>
 				</entity>
 			</Provenance>
 		</resource>
 	</entry>
 	<entry>
-		<fullUrl value="http://hapi.fhir.org/baseR4/Provenance/IPS-example-Provenance-Composition-02"/>
+	<fullUrl value="http://hapi.fhir.org/baseR4/Provenance/IPS-example-Provenance-Composition-02"/>
 		<resource>
 			<Provenance>
 				<id value="IPS-example-Provenance-Composition-02"/>
 				<text>
 					<status value="generated"/>
-					<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been curated by Dr Demo GP</div>
+					<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been curated (authored and verified) by Dr Beetje Van Hulp using as source the information pre-assembled by the National IPS system</div>
 				</text>
-				<!--   
-    where possible, provenance targets should be version specific,
-    so that there is no ambiguity about which version of the 
-    record this relates to
-    -->
 				<target>
 					<reference value="Composition/IPS-examples-Composition-01/_history/1"/>
 				</target>
 				<recorded value="2017-07-20T14:30:00+01:00"/>
 				<reason>
-					<!-- WHAT CODE TO USE FOR THE PS CREATION ? -->
-					<!-- TOO GENERIC ? -->
 					<!-- Purpose of USe or Purpose of Processing ? -->
 					<coding>
 						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 						<code value="CAREMGT"/>
 						<display value="care management"/>
 					</coding>
+					<coding>
+						<system value="https:/terminology.regional-ehr.example/purposeofuse"/>
+						<code value="clin_sum"/>
+						<display value="Clinical Summary management"/>
+					</coding>
 				</reason>
 				<activity>
-					<text value="Authoring"/>
-					<!-- use CREATE ? -->
+					<coding>
+						<system value="https:/terminology.regional-ehr.example/purposeofprocessing"/>
+						<code value="clin_sum_cur"/>
+						<display value="Clinical Summary Curation"/>
+					</coding>
+					<text value="IPS Authoring and Validation"/>
 				</activity>
 				<agent>
 					<type>
@@ -1208,27 +1219,219 @@
 				</agent>
 				<entity>
 					<role value="source"/>
-					<!--   Should this list the sources data come from ? in case how ?      -->
 					<what>
-						<display value="National ePrescription System"/>
-					</what>
-				</entity>
-				<entity>
-					<role value="source"/>
-					<!--   Should this list the sources data come from ? in case how ?      -->
-					<what>
-						<display value="National vaccination Registry"/>
-					</what>
-				</entity>
-				<entity>
-					<role value="source"/>
-					<!--   Should this list the sources data come from ? in case how ?      -->
-					<!-- is this right ?  -->
-					<what>
+						<reference value="Device/IPS-examples-Device-01"/>
 						<display value="National IPS creator system"/>
 					</what>
 				</entity>
 			</Provenance>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://hapi.fhir.org/baseR4/Provenance/IPS-example-Provenance-BldGrp-01"/>
+
+		<resource>
+			<Provenance>
+				<id value="IPS-example-Provenance-BldGrp-01"/>
+				<text>
+					<status value="generated"/>
+					<div xmlns="http://www.w3.org/1999/xhtml">The Blood Typing is derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</div>
+				</text>
+				<!--   
+    where possible, provenance targets should be version specific,
+    so that there is no ambiguity about which version of the 
+   record this relates to
+
+    -->
+				<target>
+					<reference value="http://hapi.fhir.org/baseR4/Observation/IPS-examples-Observation-01-0"/>
+				</target>
+				<recorded value="2015-10-10T09:15:00+01:00"/>
+				<reason>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="CAREMGT"/>
+						<display value="care management"/>
+					</coding>
+					<coding>
+						<system value="https:/terminology.regional-ehr.example/purposeofuse"/>
+						<code value="clin_sum"/>
+						<display value="Clinical Summary management"/>
+					</coding>
+				</reason>
+				<activity>
+					<coding>
+						<system value="https:/terminology.regional-ehr.example/purposeofprocessing"/>
+						<code value="data_extraction"/>
+						<display value="Data Extraction"/>
+					</coding>
+					<text value="IPS creation"/>
+				</activity>
+				<agent>
+					<type>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/v3-ParticipationType"/>
+							<code value="DEV"/>
+						</coding>
+					</type>
+					<role>
+						<coding>
+							<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+							<code value="assembler"/>
+						</coding>
+					</role>
+					<who>
+						<display value="Nice Software"/>
+					</who>
+					<onBehalfOf>
+						<reference value="Organization/IPS-examples-Organization-02"/>
+						<display value="Laboratoire de charme"/>
+					</onBehalfOf>
+				</agent>
+				<entity>
+					<role value="source"/>
+					<what>
+						<identifier id="1234567"/>
+						<display value="Lab Result id #1234567"/>
+					</what>
+				</entity>
+				<entity>
+					<role value="source"/>
+					<what>
+						<display value="Lab Information System of  Laboratoire de charme"/>
+					</what>
+				</entity>
+			</Provenance>
+		</resource>
+	</entry>
+	<entry>
+		<fullUrl value="http://hapi.fhir.org/baseR4/Consent/consent-regionalEHRS-01b"/>
+		<resource>
+			<Consent>
+				<id value="consent-regionalEHRS-01b"/>
+				<text>
+					<status value="generated"/>
+					<xhtml:div>
+						<xhtml:div lang="it-IT">Consenso all'alimentazione per l'attivazione del suo FSE, che consentirà il perseguimento
+delle finalità di ricerca e di governo [C1]</xhtml:div>
+						<xhtml:div lang="en">Consent to the feeding and activation of your regional EHR, which will allow the pursuit
+of research and government purposes [C1]</xhtml:div>
+						<xhtml:div lang="it-IT">Consenso per il recupero dei Suoi dati di salute pregressi, ove disponibili, a partire dalla data di istituzione del FSE in Regione. [C2]</xhtml:div>
+						<xhtml:div lang="en">Consent for the recovery of your previous health data, where available, starting from the date of establishment of the EHR in the Region [C2]</xhtml:div>
+					</xhtml:div>
+				</text>
+				<status value="active"/>
+				<scope>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+						<code value="patient-privacy"/>
+					</coding>
+				</scope>
+				<category>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="59284-0"/>
+					</coding>
+				</category>
+				<patient>
+					<reference value="Patient/IPS-examples-Patient-01"/>
+					<display value="Martha DeLarosa"/>
+				</patient>
+				<dateTime value="2015-04-23"/>
+				<organization>
+					<identifier id="2.16.840.1.113883.2.9.2.90"/>
+					<display value="Very Nice Region"/>
+				</organization>
+				<policy>
+					<!-- consent for the creation of the regional EHR -->
+					<uri value="https://www.regional-ehr.example/consentPolicy/C1"/>
+				</policy>
+				<policy>
+					<!-- consent for recovering the history -->
+					<uri value="https://www.regional-ehr.example/consentPolicy/C2"/>
+				</policy>
+				<policyRule>
+					<coding>
+						<system value="https://www.regional-ehr.example/CodeSystem/consentpolicycodes"/>
+						<code value="it-fse"/>
+						<display value="IT FSE Opt-in consent"/>
+					</coding>
+				</policyRule>
+				<provision>
+					<type value="permit"/>
+					<purpose>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="CAREMGT"/>
+						<display value="care management"/>
+					</purpose>
+				</provision>
+			</Consent>
+		</resource>
+	</entry>
+	<entry>
+	<fullUrl value="http://hapi.fhir.org/baseR4/Consent/consent-labRep-01"/>
+		<resource>
+			<Consent>
+				<id value="consent-labRep-01"/>
+				<text>
+					<status value="generated"/>
+					<!--
+Consent to use the results of this lab report for Clinical Research Purposes.
+-->
+					<xhtml:div>
+						<xhtml:div lang="it-IT">Consenso all'uso dei risultati del referto di laboratorio ID 1234567, del 10-10-2015 da Nice Lab Organization per finalità di ricerca e studi clinci , porjectto XYZ</xhtml:div>
+						<xhtml:div lang="en">Consent for clinical research purposes and for project XYZ for data derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</xhtml:div>
+					</xhtml:div>
+				</text>
+				<status value="active"/>
+				<scope>
+					<coding>
+						<system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+						<code value="patient-privacy"/>
+					</coding>
+				</scope>
+				<category>
+					<coding>
+						<system value="http://loinc.org"/>
+						<code value="59284-0"/>
+					</coding>
+				</category>
+				<patient>
+					<reference value="Patient/IPS-examples-Patient-01"/>
+					<display value="Martha DeLarosa"/>
+				</patient>
+				<dateTime value="2018-12-21"/>
+				<organization>
+					<display value="Nice Lab Organization"/>
+				</organization>
+				<policyRule>
+					<coding>
+						<system value=""/>
+						<code value="CLINTRCH"/>
+						<display value="clinical trial research"/>
+					</coding>
+				</policyRule>
+				<provision>
+					<type value="permit"/>
+					<purpose>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="CLINTRCH"/>
+						<display value="clinical trial research"/>
+					</purpose>
+					<purpose>
+						<system value="https://www.regional-ehr.example/CodeSystem/purposeOfUse"/>
+						<code value="CLINTRCH_PRJ_XYZ"/>
+						<display value="Clinical trial research for project XYZ"/>
+					</purpose>
+					<data>
+						<meaning value="dependents"/>
+						<reference>
+							<identifier id="1234567"/>
+							<display value="Lab Result id #1234567"/>
+						</reference>
+					</data>
+				</provision>
+			</Consent>
 		</resource>
 	</entry>
 </Bundle>

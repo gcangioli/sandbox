@@ -5,28 +5,30 @@
 		<status value="generated"/>
 		<div xmlns="http://www.w3.org/1999/xhtml">This IPS has been curated (authored and verified) by Dr Beetje Van Hulp using as source the information pre-assembled by the National IPS system</div>
 	</text>
-	<!--   
-    where possible, provenance targets should be version specific,
-    so that there is no ambiguity about which version of the 
-    record this relates to
-    -->
 	<target>
 		<reference value="Composition/IPS-examples-Composition-01/_history/1"/>
 	</target>
 	<recorded value="2017-07-20T14:30:00+01:00"/>
 	<reason>
-		<!-- WHAT CODE TO USE FOR THE PS CREATION ? -->
-		<!-- TOO GENERIC ? -->
 		<!-- Purpose of USe or Purpose of Processing ? -->
 		<coding>
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 			<code value="CAREMGT"/>
 			<display value="care management"/>
 		</coding>
+				<coding>
+			<system value="https:/terminology.regional-ehr.example/purposeofuse"/>
+			<code value="clin_sum"/>
+			<display value="Clinical Summary management"/>
+		</coding>
 	</reason>
 	<activity>
-		<text value="Authoring"/>
-		<!-- use CREATE ? -->
+			<coding>
+			<system value="https:/terminology.regional-ehr.example/purposeofprocessing"/>
+			<code value="clin_sum_cur"/>
+			<display value="Clinical Summary Curation"/>
+		</coding>
+		<text value="IPS Authoring and Validation"/>
 	</activity>
 	<agent>
 		<type>
@@ -54,11 +56,8 @@
 		</who>
 	</agent>
 	<entity>
-		<role value="source"/>
-		<!--   Should this list the sources data come from ? in case how ?      -->
-		<!-- is this right ?  -->
-		<what>
-			<!-- is correct to have the device as source ? -->
+		<role value="source"/>		
+		<what>			
 			<reference value="Device/IPS-examples-Device-01"/>
 			<display value="National IPS creator system"/>
 		</what>

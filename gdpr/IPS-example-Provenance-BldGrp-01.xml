@@ -21,11 +21,19 @@
 			<code value="CAREMGT"/>
 			<display value="care management"/>
 		</coding>
-		<text value="IPS creation"/>
+		<coding>
+			<system value="https:/terminology.regional-ehr.example/purposeofuse"/>
+			<code value="clin_sum"/>
+			<display value="Clinical Summary management"/>
+		</coding>
 	</reason>
 	<activity>
-		<text value="Data Extraction"/>
-		<!-- data extraction we need a code for such a kind of activity.. -->
+		<coding>
+			<system value="https:/terminology.regional-ehr.example/purposeofprocessing"/>
+			<code value="data_extraction"/>
+			<display value="Data Extraction"/>
+		</coding>
+		<text value="IPS creation"/>
 	</activity>
 	<agent>
 		<type>
@@ -36,13 +44,17 @@
 		</type>
 		<role>
 			<coding>
-				<!-- concept missing ? -->
-				<display value="Data extractor"/>
+				<system value="http://terminology.hl7.org/CodeSystem/provenance-participant-type"/>
+				<code value="assembler"/>
 			</coding>
 		</role>
 		<who>
 			<display value="Nice Software"/>
 		</who>
+		<onBehalfOf>
+			<reference value="Organization/IPS-examples-Organization-02"/>
+			<display value="Laboratoire de charme"/>
+		</onBehalfOf>
 	</agent>
 	<entity>
 		<role value="source"/>
@@ -54,7 +66,7 @@
 	<entity>
 		<role value="source"/>
 		<what>
-			<display value="Lab Information System of  Nice Lab Organization"/>
+			<display value="Lab Information System of  Laboratoire de charme"/>
 		</what>
 	</entity>
 </Provenance>

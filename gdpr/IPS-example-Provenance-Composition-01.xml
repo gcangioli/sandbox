@@ -15,21 +15,26 @@
 	</target>
 	<recorded value="2017-07-20T14:30:00+01:00"/>
 	<reason>
-		<!-- WHAT CODE TO USE FOR THE PS CREATION ? -->
-		<!-- TOO GENERIC ? -->
 		<!-- Purpose of USe or Purpose of Processing ? -->
 		<coding>
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
 			<code value="CAREMGT"/>
 			<display value="care management"/>
-
 			<!-- Clinical Summary Sharing -->
+		</coding>
+		<coding>
+			<system value="https:/terminology.regional-ehr.example/purposeofuse"/>
+			<code value="clin_sum"/>
+			<display value="Clinical Summary management"/>
 		</coding>
 	</reason>
 	<activity>
-	
+		<coding>
+			<system value="https:/terminology.regional-ehr.example/purposeofprocessing"/>
+			<code value="clin_sum_ass"/>
+			<display value="Clinical Summary Assembling"/>
+		</coding>
 		<!--		Assemblig data for Clinical Summary Creation -->
-
 		<text value="IPS data preselection"/>
 	</activity>
 	<agent>
@@ -54,19 +59,19 @@
 	<entity>
 		<role value="source"/>
 		<what>
-			<display value="National ePrescription System"/>			
+			<display value="National ePrescription System"/>
 		</what>
 	</entity>
-		<entity>
+	<entity>
 		<role value="source"/>
 		<what>
-			<display value="National vaccination Registry"/>			
+			<display value="National Vaccination Registry"/>
 		</what>
 	</entity>
-		<entity>
+	<entity>
 		<role value="source"/>
 		<what>
-			<display value="Laboratory Information System XYZ"/>			
+			<display value="Lab Information System of  Laboratoire de charme"/>
 		</what>
 	</entity>
 </Provenance>
