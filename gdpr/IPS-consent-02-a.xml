@@ -76,9 +76,9 @@
 		<provision>
 			<type value="permit"/>
 			<purpose>
-				<system value="https://www.regional-ehr.example/CodeSystem/purposeOfUse"/>
-				<code value="CLINTRCH_PRJ_XYZ"/>
-				<display value="Clinical trial research for project XYZ"/>
+				<system value="https://www.regional-ehr.example/CodeSystem/ActCode"/>
+				<code value="RESCOMPT_PRJ_XYZ"/>
+				<display value="Research project XYZ compartment"/>
 			</purpose>
 			<data>
 				<meaning value="dependents"/>

@@ -10,7 +10,7 @@
 				<xhtml:p>In questo caso sono ammessi come finalità valide ogni tipo di attività di cura ed attività di ricerca per il progetto XYZ (OR)</xhtml:p>
 			</xhtml:div>
 			<xhtml:div lang="en">
-				<xhtml:p>Consent both for health care delivery and research for project XYZ for all the data derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</xhtml:p>
+				<xhtml:p>Consent both for treatment and research for project XYZ for all the data derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</xhtml:p>
 				<xhtml:p>Admitted purposes are both health care delivery both clinical trial research for project XYZ (OR)</xhtml:p>
 			</xhtml:div>
 		</xhtml:div>
@@ -62,8 +62,8 @@
 			<type value="permit"/>
 			<purpose>
 				<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-				<code value="HDM"/>
-				<display value="healthcare delivery management"/>
+				<code value="TREAT"/>
+				<display value="Treatment"/>
 			</purpose>
 		</provision>
 		<provision>

@@ -5,8 +5,8 @@
 		<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-laboratory-uv-ips"/>
 		<security>
 			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-			<code value="HDM"/>
-			<display value="healthcare delivery management"/>
+			<code value="TREAT"/>
+			<display value="Treatment"/>
 		</security>
 		<security>
 			<system value="https://www.regional-ehr.example/CodeSystem/ActCode"/>

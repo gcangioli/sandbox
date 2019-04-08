@@ -2,6 +2,29 @@
 	<id value="IPS-examples-Bundle-w-prov-01"/>
 	<meta>
 		<lastUpdated value="2017-07-20T14:30:00+01:00"/>
+		<security>
+			<!-- Indicate that the IT resource syntax has been transformed from one syntactical representation to another. -->
+			<system value="http://hl7.org/fhir/v3/ObservationValue"/>
+			<code value="SYNTAC"/>
+			<display value="syntactic transform"/>
+		</security>
+		<security>
+			<system value="http://hl7.org/fhir/v3/ObservationValue"/>
+			<!-- Indicate that the IT resource semantic content has been transformed from one encoding to another.  -->
+			<code value="MAPPED"/>
+			<display value="mapped"/>
+		</security>
+		<security>
+			<!-- Indicate that the IT resource has been translated from one human language to another. -->
+			<system value="http://hl7.org/fhir/v3/ObservationValue"/>
+			<code value="TRSLT"/>
+			<display value="translated"/>
+		</security>
+		<security>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="TREAT"/>
+			<display value="Treatment"/>
+		</security>
 	</meta>
 	<language value="en-GB"/>
 	<identifier>
@@ -959,6 +982,16 @@
 				<id value="IPS-examples-Observation-01-1"/>
 				<meta>
 					<profile value="http://hl7.org/fhir/uv/ips/StructureDefinition/Observation-laboratory-uv-ips"/>
+					<security>
+						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+						<code value="TREAT"/>
+						<display value="Treatment"/>
+					</security>
+					<security>
+						<system value="https://www.regional-ehr.example/CodeSystem/ActCode"/>
+						<code value="RESCOMPT_PRJ_XYZ"/>
+						<display value="Research project XYZ compartment"/>
+					</security>
 				</meta>
 				<status value="final"/>
 				<category>
@@ -1301,166 +1334,6 @@
 					</what>
 				</entity>
 			</Provenance>
-		</resource>
-	</entry>
-	<entry>
-		<fullUrl value="http://hapi.fhir.org/baseR4/Consent/consent-regionalEHRS-01b"/>
-		<resource>
-			<Consent>
-				<id value="consent-regionalEHRS-01b"/>
-				<text>
-					<status value="generated"/>
-					<xhtml:div>
-						<xhtml:div lang="it-IT">Consenso all'alimentazione per l'attivazione del suo FSE, che consentirà il perseguimento
-delle finalità di ricerca e di governo [C1]</xhtml:div>
-						<xhtml:div lang="en">Consent to the feeding and activation of your regional EHR, which will allow the pursuit
-of research and government purposes [C1]</xhtml:div>
-						<xhtml:div lang="it-IT">Consenso per il recupero dei Suoi dati di salute pregressi, ove disponibili, a partire dalla data di istituzione del FSE in Regione. [C2]</xhtml:div>
-						<xhtml:div lang="en">Consent for the recovery of your previous health data, where available, starting from the date of establishment of the EHR in the Region [C2]</xhtml:div>
-					</xhtml:div>
-				</text>
-				<status value="active"/>
-				<scope>
-					<coding>
-						<system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
-						<code value="patient-privacy"/>
-					</coding>
-				</scope>
-				<category>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="59284-0"/>
-					</coding>
-				</category>
-				<patient>
-					<reference value="Patient/IPS-examples-Patient-01"/>
-					<display value="Martha DeLarosa"/>
-				</patient>
-				<dateTime value="2015-04-23"/>
-				<organization>
-					<identifier id="2.16.840.1.113883.2.9.2.90"/>
-					<display value="Very Nice Region"/>
-				</organization>
-				<policy>
-					<!-- consent for the creation of the regional EHR -->
-					<uri value="https://www.regional-ehr.example/consentPolicy/C1"/>
-				</policy>
-				<policy>
-					<!-- consent for recovering the history -->
-					<uri value="https://www.regional-ehr.example/consentPolicy/C2"/>
-				</policy>
-				<policyRule>
-					<coding>
-						<system value="https://www.regional-ehr.example/CodeSystem/consentpolicycodes"/>
-						<code value="it-fse"/>
-						<display value="IT FSE Opt-in consent"/>
-					</coding>
-				</policyRule>
-				<provision>
-					<type value="permit"/>
-					<purpose>
-						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-						<code value="CAREMGT"/>
-						<display value="care management"/>
-					</purpose>
-				</provision>
-			</Consent>
-		</resource>
-	</entry>
-	<entry>
-		<fullUrl value="http://hapi.fhir.org/baseR4/Consent/consent-labRep-01-a"/>
-		<resource>
-			<Consent>
-				<id value="consent-labRep-01-a"/>
-				<text>
-					<status value="generated"/>
-					<!-- Consent to use the results of this lab report for Clinical Research Purposes OR in Project XYZ -->
-					<xhtml:div>
-						<xhtml:div lang="it-IT">
-							<xhtml:p>Consenso all'uso dei risultati del referto di laboratorio ID 1234567, del 10-10-2015 da Nice Lab Organization sia per studi clinici che per il progetto "XYZ". </xhtml:p>
-							<xhtml:p>In questo caso sono ammessi come finalità valide ogni tipo di studio clinico ed il loro uso all'interno del progetto XYZ (OR)</xhtml:p>
-						</xhtml:div>
-						<xhtml:div lang="en">
-							<xhtml:p>Consent both for clinical research purposes and for project XYZ for all the data derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</xhtml:p>
-							<xhtml:p>Admitted purposes are both clinical trial research both clinical trial research for project XYZ (OR)</xhtml:p>
-						</xhtml:div>
-					</xhtml:div>
-				</text>
-				<status value="active"/>
-				<scope>
-					<coding>
-						<system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
-						<code value="patient-privacy"/>
-					</coding>
-				</scope>
-				<category>
-					<coding>
-						<system value="http://loinc.org"/>
-						<code value="59284-0"/>
-					</coding>
-				</category>
-				<patient>
-					<reference value="Patient/IPS-examples-Patient-01"/>
-					<display value="Martha DeLarosa"/>
-				</patient>
-				<dateTime value="2018-12-21"/>
-				<organization>
-					<display value="Nice Lab Organization"/>
-				</organization>
-				<policyRule>
-					<coding>
-						<system value="https://www.regional-ehr.example/CodeSystem/consentpolicycodes"/>
-						<code value="it-fse"/>
-						<display value="IT FSE Opt-in consent"/>
-					</coding>
-				</policyRule>
-				<provision>
-					<!-- Deny healthcare research excpeting clinical trial research or Clinical trial research for project XYZ -->
-					<type value="deny"/>
-					<purpose>
-						<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-						<code value="HRESCH"/>
-						<display value="healthcare research"/>
-					</purpose>
-					<data>
-						<meaning value="dependents"/>
-						<reference>
-							<identifier id="1234567"/>
-							<display value="Lab Result id #1234567"/>
-						</reference>
-					</data>
-					<provision>
-						<type value="permit"/>
-						<purpose>
-							<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
-							<code value="CLINTRCH"/>
-							<display value="clinical trial research"/>
-						</purpose>
-						<data>
-							<meaning value="dependents"/>
-							<reference>
-								<identifier id="1234567"/>
-								<display value="Lab Result id #1234567"/>
-							</reference>
-						</data>
-					</provision>
-					<provision>
-						<type value="permit"/>
-						<purpose>
-							<system value="https://www.regional-ehr.example/CodeSystem/ActCode"/>
-							<code value="RESCOMPT_PRJ_XYZ"/>
-							<display value="Research project XYZ compartment"/>
-						</purpose>
-						<data>
-							<meaning value="dependents"/>
-							<reference>
-								<identifier id="1234567"/>
-								<display value="Lab Result id #1234567"/>
-							</reference>
-						</data>
-					</provision>
-				</provision>
-			</Consent>
 		</resource>
 	</entry>
 </Bundle>
