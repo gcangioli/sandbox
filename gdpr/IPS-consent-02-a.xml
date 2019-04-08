@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Consent xmlns="http://hl7.org/fhir" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xhtml="http://www.w3.org/1999/xhtml" xsi:schemaLocation="http://hl7.org/fhir ../../../__FHIRr4Tools/fhir-all-xsd/consent.xsd">
+	<id value="consent-labRep-01-a"/>
+	<text>
+		<status value="generated"/>
+		<!-- Consent to use the results of this lab report for Clinical Research Purposes OR in Project XYZ -->
+		<xhtml:div>
+			<xhtml:div lang="it-IT">
+				<xhtml:p>Consenso all'uso dei risultati del referto di laboratorio ID 1234567, del 10-10-2015 da Nice Lab Organization sia per studi clinici che per il progetto "XYZ". </xhtml:p>
+				<xhtml:p>In questo caso sono ammessi come finalità valide ogni tipo di studio clinico ed il loro uso all'interno del progetto XYZ (OR)</xhtml:p>
+			</xhtml:div>
+			<xhtml:div lang="en">
+				<xhtml:p>Consent both for clinical research purposes and for project XYZ for all the data derived from the report ID 1234567, done on 2015-10-10 by the Nice Lab Organization</xhtml:p>
+				<xhtml:p>Admitted purposes are both clinical trial research both clinical trial research for project XYZ (OR)</xhtml:p>
+			</xhtml:div>
+		</xhtml:div>
+	</text>
+	<status value="active"/>
+	<scope>
+		<coding>
+			<system value="http://terminology.hl7.org/CodeSystem/consentscope"/>
+			<code value="patient-privacy"/>
+		</coding>
+	</scope>
+	<category>
+		<coding>
+			<system value="http://loinc.org"/>
+			<code value="59284-0"/>
+		</coding>
+	</category>
+	<patient>
+		<reference value="Patient/IPS-examples-Patient-01"/>
+		<display value="Martha DeLarosa"/>
+	</patient>
+	<dateTime value="2018-12-21"/>
+	<organization>
+		<display value="Nice Lab Organization"/>
+	</organization>
+	<policyRule>
+		<coding>
+			<system value="https://www.regional-ehr.example/CodeSystem/consentpolicycodes"/>
+			<code value="it-fse"/>
+			<display value="IT FSE Opt-in consent"/>
+		</coding>
+	</policyRule>
+	<provision>
+		<!-- Deny healthcare research excpeting clinical trial research or Clinical trial research for project XYZ -->
+		<type value="deny"/>
+		<purpose>
+			<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+			<code value="HRESCH"/>
+			<display value="healthcare research"/>
+		</purpose>
+		<data>
+			<meaning value="dependents"/>
+			<reference>
+				<identifier id="1234567"/>
+				<display value="Lab Result id #1234567"/>
+			</reference>
+		</data>
+		<provision>
+			<type value="permit"/>
+			<purpose>
+				<system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+				<code value="CLINTRCH"/>
+				<display value="clinical trial research"/>
+			</purpose>
+			<data>
+				<meaning value="dependents"/>
+				<reference>
+					<identifier id="1234567"/>
+					<display value="Lab Result id #1234567"/>
+				</reference>
+			</data>
+		</provision>
+		<provision>
+			<type value="permit"/>
+			<purpose>
+				<system value="https://www.regional-ehr.example/CodeSystem/purposeOfUse"/>
+				<code value="CLINTRCH_PRJ_XYZ"/>
+				<display value="Clinical trial research for project XYZ"/>
+			</purpose>
+			<data>
+				<meaning value="dependents"/>
+				<reference>
+					<identifier id="1234567"/>
+					<display value="Lab Result id #1234567"/>
+				</reference>
+			</data>
+		</provision>
+	</provision>
+</Consent>
